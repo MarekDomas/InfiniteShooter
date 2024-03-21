@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/../../../../Marek/music.wav</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/32x32-bat-sprite.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/bakground.jpg</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/ball.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/colored_packed.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/explosion.wav</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/font.spritefont</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/gun-gunshot-02.wav</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/scope.jpg</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>music.wav</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

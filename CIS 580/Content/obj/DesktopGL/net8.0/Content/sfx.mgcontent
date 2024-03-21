@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>/home/marek/RiderProjects/CIS 580/CIS 580/Content/mixkit-game-gun-shot-1662.mp3</SourceFile>
+  <SourceTime>2024-03-17T20:16:00.6799801+01:00</SourceTime>
+  <DestFile>/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/Content/sfx.xnb</DestFile>
+  <DestTime>2024-03-17T20:20:02.3099711+01:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2022-07-26T13:44:56+02:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T13:44:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/Content/sfx.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>
