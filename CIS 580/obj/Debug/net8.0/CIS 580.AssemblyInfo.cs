@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CIS 580")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fc8ea980fb8069bf21568fe772808bd18196d8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CIS 580")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CIS 580")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

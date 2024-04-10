@@ -6,16 +6,36 @@
   <SourceFiles>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/../../../../Marek/music.wav</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/32x32-bat-sprite.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/apple.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/background_stars.jpg</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/background.png</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/bakground.jpg</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/ball.png</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/colored_packed.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/explosion.png</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/explosion.wav</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/flaming_meteor.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/flare.png</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/font.spritefont</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/gun-gunshot-02.wav</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/laser.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/meteor.png</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/powerup_icon.png</File>
     <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/scope.jpg</File>
+    <File>/home/marek/RiderProjects/CIS 580/CIS 580/Content/score.png</File>
   </SourceFiles>
   <DestFiles>
     <File>music.wav</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

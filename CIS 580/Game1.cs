@@ -16,7 +16,7 @@ public class Game1 : Game
     private MainMenu _mainMenu;
     private Vector2 _mousePos;
 
-    private readonly ScreenManager _screenManager;
+    public readonly ScreenManager _screenManager;
     
     public Game1()
     {
@@ -25,6 +25,7 @@ public class Game1 : Game
         IsMouseVisible = true;
         _gameWindow = Window;
         _screenManager = new ScreenManager();
+        Globals.GraphicsDevice = _graphics;
         Components.Add(_screenManager);
     }
 
@@ -33,13 +34,14 @@ public class Game1 : Game
         // TODO: Add your initialization logic here
         _gameWindow.Title = "krek";
         _graphics.IsFullScreen = false;
-        _graphics.PreferredBackBufferWidth = 1330;
-        _graphics.PreferredBackBufferHeight = 840;
+        _graphics.PreferredBackBufferWidth = Globals.ScreenWidth;
+        _graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
         _graphics.ApplyChanges();
         _playScreen= new PlayScreen(this);
         _mainMenu = new MainMenu(this);
         StateManager.MenuScreen = true;
         StateManager.PlayScreen = false;
+        Content.RootDirectory = "Content";
         MainMenu();
         base.Initialize();
     }
@@ -49,6 +51,7 @@ public class Game1 : Game
         // TODO: use this.Content to load your game content here
         _spriteBatch = new SpriteBatch(GraphicsDevice);
     }
+    
 
     protected override void Update(GameTime gameTime)
     {
@@ -57,11 +60,12 @@ public class Game1 : Game
             Keyboard.GetState().IsKeyDown(Keys.Escape) ||Keyboard.GetState().IsKeyDown(Keys.Q) )
             Exit();
 
-        if (Keyboard.GetState().IsKeyDown(Keys.E) && !StateManager.PlayScreen)
+        if (!StateManager.PlayScreen && _mainMenu.Play)
         {
             Play();
+            StateManager.PlayScreen = true;
+            StateManager.MenuScreen = false;
         }
-
         
         base.Update(gameTime);
     }
@@ -71,7 +75,6 @@ public class Game1 : Game
     private bool isClicked = false;
     protected override void Draw(GameTime gameTime)
     {
-
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         base.Draw(gameTime);

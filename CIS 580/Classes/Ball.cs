@@ -15,6 +15,7 @@ using MonoGame.Extended.Particles.Modifiers.Interpolators;
 using MonoGame.Extended.Particles.Profiles;
 using MonoGame.Extended.TextureAtlases;
 
+
 namespace CIS_580;
 
 public class Ball
@@ -83,27 +84,9 @@ public class Ball
         set { deathParticle = value; }
     }
     
-    
-    public Ball(Vector2 position, Vector2 velocity, Texture2D texture)
+    public Ball(GraphicsDevice graphicsDevice)
     {
-        this.position = position;
-        this.velocity = velocity;
-        this.texture = texture;
-        
-        body.OnCollision += (Fixture fixtureA, Fixture fixtureB, Contact contact) =>
-        {
-            if (fixtureA.Body.Tag == "Ball")
-            {
-                isAlive = false;
-            }
-
-            return true;
-        };
-    }
-
-    public Ball()
-    {
-        
+        trailParticle = CreateParticle(graphicsDevice, Color.MonoGameOrange,1);
     }
     
     private bool clicked = false;
@@ -116,29 +99,21 @@ public class Ball
         _sfx = _contentManager.Load<SoundEffect>("explosion");
     }
 
-    public void Move(Player player, GameTime time)
+    public void Update(Player player, GameTime time)
     {
         
         Vector2 ballCenter = new Vector2(position.X + radius, position.Y + radius);
         if (isAlive)
         {
-            //position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //body.Awake = true;
-            //body.LinearVelocity = velocity;
-            //body.Position = new Vector2(10, body.Position.Y);
             position = body.Position;
-            // if (Collides(balls))
-            // {
-            //     isAlive = false;
-            // }
 
-            if (position.Y >= 840)
+            if (position.Y >= Globals.ScreenHeight)//After it reaches bottom of the screen it dies and deducts score
             {
                 player.HP--;
                 isAlive = false;
             }
 
-            if (Vector2.Distance(new Vector2(Mouse.GetState().X, Mouse.GetState().Y), ballCenter) < tolerance && Mouse.GetState().LeftButton == ButtonState.Pressed )
+            if (Vector2.Distance(new Vector2(Mouse.GetState().X, Mouse.GetState().Y), ballCenter) < tolerance && Mouse.GetState().LeftButton == ButtonState.Pressed )//Dies when the player click it
             {
                 if (!clicked)
                 {
@@ -164,21 +139,41 @@ public class Ball
 
     }
 
-    public ParticleEffect CreateParticle(GraphicsDevice graphicsDevice)
+    public void Draw(SpriteBatch spriteBatch,GameTime time)//Draws trail particle
+    {
+        spriteBatch.Draw(trailParticle);
+        trailParticle.Update((float)time.ElapsedGameTime.TotalSeconds);
+        trailParticle.Position = new Vector2(position.X + radius ,position.Y + radius);
+    }
+
+    private ParticleEffect trailParticle;
+    
+    public double timer = 0;
+    public void Die(SpriteBatch spriteBatch,GameTime time)//Plays death particle for half a second
+    {
+        timer += time.ElapsedGameTime.TotalSeconds;
+        if (timer <= 0.5)
+        {
+            spriteBatch.Draw(DeathParticle);
+            DeathParticle.Update((float)time.ElapsedGameTime.TotalSeconds);
+        }
+    }
+
+    public ParticleEffect CreateParticle(GraphicsDevice graphicsDevice,Color color,double lifetime)
     {
         Texture2D newTexture = new Texture2D(graphicsDevice,1,1) ;
         ParticleEffect newParticle = new ParticleEffect();
         
-        newTexture.SetData(new[] { Color.White });
+        newTexture.SetData(new[] { color });
 
         TextureRegion2D textureRegion = new TextureRegion2D(newTexture);
         newParticle = new ParticleEffect(autoTrigger: false)
         {
-            Position = new Vector2(Mouse.GetState().Position.X,Mouse.GetState().Position.Y),
+            Position = new Vector2(-1000,-1000),
             Emitters = new List<ParticleEmitter>
             {
-                new ParticleEmitter(textureRegion, 500, TimeSpan.FromSeconds(0.3),
-                    Profile.Circle(30,Profile.CircleRadiation.Out))
+                new ParticleEmitter(textureRegion, 1000, TimeSpan.FromSeconds(lifetime),
+                    Profile.Circle(this.radius,Profile.CircleRadiation.Out))
                 {
                     Parameters = new ParticleReleaseParameters
                     {
@@ -207,20 +202,8 @@ public class Ball
                 }
             }
         };
-       
-
+        
         return newParticle;
-    }
-
-    public double timer = 0;
-    public void Die(SpriteBatch _spriteBatch,GameTime time)
-    {
-        timer += time.ElapsedGameTime.TotalSeconds;
-        if (timer <= 0.5)
-        {
-            _spriteBatch.Draw(DeathParticle);
-            DeathParticle.Update((float)time.ElapsedGameTime.TotalSeconds);
-        }
     }
     
 }

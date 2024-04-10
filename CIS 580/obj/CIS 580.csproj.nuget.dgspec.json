@@ -50,9 +50,13 @@
               "target": "Package",
               "version": "[2.0.0, )"
             },
-            "ImGui.NET": {
+            "Comora": {
               "target": "Package",
-              "version": "[1.90.1.1, )"
+              "version": "[0.5.0, )"
+            },
+            "MLEM.Ui": {
+              "target": "Package",
+              "version": "[6.2.0, )"
             },
             "Microsoft.DotNet.ILCompiler": {
               "suppressParent": "All",
@@ -93,18 +97,6 @@
             "MonoGame.Penumbra.DesktopGL": {
               "target": "Package",
               "version": "[3.0.0, )"
-            },
-            "Myra": {
-              "target": "Package",
-              "version": "[1.5.5, )"
-            },
-            "Myra.Editor": {
-              "target": "Package",
-              "version": "[0.7.6.147, )"
-            },
-            "Myra.Extended": {
-              "target": "Package",
-              "version": "[1.1.1, )"
             }
           },
           "imports": [

@@ -1,5 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/home/marek/RiderProjects/CIS 580/CIS 580/Content/32x32-bat-sprite.png","/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/32x32-bat-sprite.xnb","TextureProcessor","Texture2DContent",2628,65621,0,0977047
-"/home/marek/RiderProjects/CIS 580/CIS 580/Content/ball.png","/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0,0019901
-"/home/marek/RiderProjects/CIS 580/CIS 580/Content/colored_packed.png","/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/colored_packed.xnb","TextureProcessor","Texture2DContent",23076,1081429,0,0252626
-"/home/marek/RiderProjects/CIS 580/CIS 580/Content/font.spritefont","/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/font.xnb","FontDescriptionProcessor","SpriteFontContent",2012,70687,0,0726076
+"/home/marek/RiderProjects/CIS 580/CIS 580/Content/ball.png","/home/marek/RiderProjects/CIS 580/CIS 580/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0,0761736

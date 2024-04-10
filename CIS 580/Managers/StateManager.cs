@@ -4,4 +4,5 @@ public static class StateManager
 {
     public static bool MenuScreen = false;
     public static bool PlayScreen = false;
+    public static bool PlayerHasWinStreak = false;
 }
